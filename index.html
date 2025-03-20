@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>青鸢智能无人机感知实验室</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+        }
+        .tabs a {
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .tabs a:hover {
+            background-color: #555;
+        }
+        .tabs a.active {
+            background-color: #555;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .sub-tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .sub-tab-content.active {
+            display: block;
+        }
+        .member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .member:hover {
+            transform: scale(1.02);
+        }
+        .member img {
+            max-width: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #181818;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #f0e7e7;
+            text-decoration: underline;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #0c0a0a;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            .member {
+                flex-direction: column;
+                text-align: center;
+            }
+            .member img {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align:center; padding: 20px;">Aerial Nexus Research Group (ANRG )</h1>
+<div class="tabs-container">
+    <div class="tabs">
+        <a href="#" class="active" onclick="openTab(event, '课题介绍');">课题介绍</a>
+        <a href="#" onclick="openTab(event, '成员');">成员</a>
+        <a href="#" onclick="openTab(event, '研究');">研究</a>
+        <a href="#" onclick="openTab(event, '发表刊物');">发表刊物</a>
+        <a href="#" onclick="openTab(event, '日常');">日常</a>
+    </div>
+</div>
+
+<div id="课题介绍" class="tab-content active">
+    <h2>关于我们的课题</h2>
+    <p>这里可以写一些关于课题组主要研究方向和目标的内容。</p>
+</div>
+
+<div id="成员" class="tab-content">
+    <h2>我们的团队</h2>
+    
+    <!-- 导师和学生标签 -->
+    <div class="tabs-container">
+        <div class="tabs">
+            <a href="#" class="active" onclick="openSubTab(event, '导师');">导师</a>
+            <a href="#" onclick="openSubTab(event, '学生');">学生</a>
+        </div>
+    </div>
+
+    <!-- 导师内容 -->
+    <div id="导师" class="sub-tab-content active">
+        <!-- 成员1 -->
+        <div class="member">
+            <img src="吴鹏飞导师照片.htm" alt="吴鹏飞导师">
+            <div>
+                <h3><a href="https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=F4A3BD42A55770DEE0530100007FAED8" target="_blank">吴鹏飞</a></h3>
+                <p>职位：硕士生导师</p>
+                <p>研究方向包括：无人机辅助物联网背景下的相关研究热点，如边缘计算、无线充电、内容缓存、最优覆盖和集群控制等； 计算理论相关研究，计算复杂性，凸优化，运筹学，博弈论，多智能体强化学习等。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 学生内容 -->
+    <div id="学生" class="sub-tab-content">
+        <!-- 成员2 -->
+        <div class="member">
+            <img src="member2.jpg" alt="王金义">
+            <div>
+                <h3>王金义</h3>
+                <p>研究方向：数据收集</p>
+            </div>
+        </div>
+        <!-- 成员3 -->
+        <div class="member">
+            <img src="member3.jpg" alt="刘欣雨">
+            <div>
+                <h3>刘欣雨</h3>
+                <p>研究方向：数据收集</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="研究" class="tab-content">
+    <h2>研究成果</h2>
+    <p>在这里可以详细介绍课题组的主要研究成果和正在进行的研究项目。</p>
+</div>
+
+<div id="发表刊物" class="tab-content">
+    <h2>发表的论文和书籍</h2>
+    <p>2025</p>
+    <!-- 创建一个4列的表格 -->
+    <table>
+        <thead>
+            <tr>
+                <th>Venue</th>
+                <th>Theme</th>
+                <th>File</th>
+                <th>Slides</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 发表刊物1 -->
+            <tr>
+                <td>无人机智能感知技术综述</td>
+                <td>张三, 李四</td>
+                <td>国际人工智能会议 (ICAI)</td>
+                <td>2023</td>
+            </tr>
+            <!-- 发表刊物2 -->
+            <tr>
+                <td>基于深度学习的无人机路径规划</td>
+                <td>王五, 赵六</td>
+                <td>IEEE Transactions on Robotics</td>
+                <td>2024</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="日常" class="tab-content">
+    <h2>日常生活</h2>
+    <p>分享课题组成员的生活点滴，如团队建设活动、实验室生活等。</p>
+</div>
+
+<footer>
+    <p>© 2025 青鸢智能无人机感知实验室. All rights reserved.</p>
+</footer>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+    tablinks = document.querySelectorAll(".tabs a");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+
+function openSubTab(evt, tabName) {
+    var i, subTabcontent, subTablinks;
+    subTabcontent = document.getElementsByClassName("sub-tab-content");
+    for (i = 0; i < subTabcontent.length; i++) {
+        subTabcontent[i].classList.remove("active");
+    }
+    subTablinks = document.querySelectorAll("#成员 .tabs a");
+    for (i = 0; i < subTablinks.length; i++) {
+        subTablinks[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
